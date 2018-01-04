@@ -1,5 +1,5 @@
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 
 var BrokerSchema = new Schema({
   description: String,
@@ -17,16 +17,16 @@ var BrokerSchema = new Schema({
   active:true,
   deployment: {
     type: Schema.Types.ObjectId,
-    ref:'deployment'
+    ref:"deployment"
   },
   added: Date,
   active: Boolean
-})
+});
 
 BrokerSchema
-	.virtual('url')
+	.virtual("url")
 	.get(function () {
-  return '/api/broker/' + this._id
-})
+  return "/api/broker/" + this._id
+});
 
-module.exports = mongoose.model('Broker', BrokerSchema)
+module.exports = mongoose.model("Broker", BrokerSchema);

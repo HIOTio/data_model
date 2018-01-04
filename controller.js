@@ -1,5 +1,5 @@
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 
 var ControllerSchema = new Schema({
   controllerId:String,
@@ -7,20 +7,20 @@ var ControllerSchema = new Schema({
   name: String,
   deployment:{
     type: Schema.Types.ObjectId,
-    ref: 'deployment'
+    ref: "deployment"
   },
   channel: String,
   handler: {
     type: Schema.Types.ObjectId,
-    ref: 'Handler'
+    ref: "Handler"
   },
   added: Date
-})
+});
 ControllerSchema
-	.virtual('url')
+	.virtual("url")
 	.get(function () {
-  return '/api/controller/' + this._id
-})
+  return "/api/controller/" + this._id
+});
 
 // Compile model from schema
-module.exports = mongoose.model('Controller', ControllerSchema)
+module.exports = mongoose.model("Controller", ControllerSchema);

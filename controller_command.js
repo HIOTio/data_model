@@ -1,5 +1,5 @@
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 
 var Controller_CommandSchema = new Schema({
   description: String,
@@ -7,12 +7,12 @@ var Controller_CommandSchema = new Schema({
   id: String,
   params: [{
     type: Schema.Types.ObjectId,
-    ref: 'Param'
+    ref: "Param"
   }]
-})
+});
 Controller_CommandSchema
-	.virtual('url')
+	.virtual("url")
 	.get(function () {
-  return '/api/controller_command/' + this._id
-})
-module.exports = mongoose.model('Controller_Command', Controller_CommandSchema)
+  return "/api/controller_command/" + this._id
+});
+module.exports = mongoose.model("Controller_Command", Controller_CommandSchema);

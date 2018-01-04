@@ -9,4 +9,4 @@ var NavigationItemSchema = new Schema({
 
 }
 })
-module.exports = mongoose.model('NavigationItem', NavigationItemSchema);
+module.exports = mongoose.model("NavigationItem", NavigationItemSchema);

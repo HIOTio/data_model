@@ -1,7 +1,7 @@
-var mongoose = require('mongoose')
+var mongoose = require("mongoose")
 
 var Schema = mongoose.Schema
-var bcrypt = require('bcrypt-nodejs')
+var bcrypt = require("bcrypt-nodejs")
 const SALT_WORK_FACTOR = 10
 
 var ProfileSchema = new Schema({
@@ -40,23 +40,23 @@ var ProfileSchema = new Schema({
   },
   deploymentRoles: {
     type: Schema.Types.ObjectId,
-    ref: 'DeploymentRoles'
+    ref: "DeploymentRoles"
   }
 })
-ProfileSchema.path('email').validate(function (email) {
+ProfileSchema.path("email").validate(function (email) {
   var emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/
   return emailRegex.test(email) // Assuming email has a text attribute
-}, 'The e-mail field cannot be empty.')
+}, "The e-mail field cannot be empty.")
 ProfileSchema
-	.virtual('url')
+	.virtual("url")
 	.get(function () {
-  return '/api/profile/' + this._id
+  return "/api/profile/" + this._id
 })
 
-ProfileSchema.pre('save', function (next) {
+ProfileSchema.pre("save", function (next) {
   var user = this
 
-  if (!user.isModified('password')) return next()
+  if (!user.isModified("password")) return next()
 
 	// generate a salt
   bcrypt.genSalt(SALT_WORK_FACTOR, function (err, salt) {
@@ -83,4 +83,4 @@ ProfileSchema.methods.comparePassword = function (candidatePassword, cb) {
     cb(null, isMatch)
   })
 }
-module.exports = mongoose.model('Profile', ProfileSchema)
+module.exports = mongoose.model("Profile", ProfileSchema)

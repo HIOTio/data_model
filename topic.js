@@ -1,4 +1,4 @@
-var mongoose = require('mongoose')
+var mongoose = require("mongoose")
 var Schema = mongoose.Schema
 
 var TopicSchema = new Schema({
@@ -13,10 +13,10 @@ var TopicSchema = new Schema({
   }]
 })
 TopicSchema
-	.virtual('url')
+	.virtual("url")
 	.get(function () {
-  return '/api/topic/' + this._id
+  return "/api/topic/" + this._id
 })
 
 // Compile model from schema
-module.exports = mongoose.model('Topic', TopicSchema)
+module.exports = mongoose.model("Topic", TopicSchema)

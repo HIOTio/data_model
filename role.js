@@ -1,7 +1,6 @@
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
-
-RoleSchema = new Schema({
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
+var RoleSchema = new Schema({
   description: String,
   add_deployment: Boolean,
   name: String,
@@ -12,10 +11,10 @@ RoleSchema = new Schema({
     type: Date,
     default: Date.now
   }
-})
+});
 RoleSchema
-    .virtual('url')
+    .virtual("url")
     .get(function () {
-      return '/api/role/' + this._id
-    })
-module.exports = mongoose.model('Role', RoleSchema)
+      return "/api/role/" + this._id
+    });
+module.exports = mongoose.model("Role", RoleSchema);

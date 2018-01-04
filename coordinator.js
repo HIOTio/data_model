@@ -1,6 +1,6 @@
-var mongoose = require('mongoose')
+var mongoose = require("mongoose");
 
-var Schema = mongoose.Schema
+var Schema = mongoose.Schema;
 
 var CoordinatorSchema = new Schema({
   coordinatorId:String,
@@ -15,7 +15,7 @@ var CoordinatorSchema = new Schema({
   },
   deployment: {
     type: Schema.Types.ObjectId,
-    ref: 'Deployment',
+    ref: "Deployment",
     required: true
   },
   channels:[
@@ -25,12 +25,12 @@ var CoordinatorSchema = new Schema({
         function: String
   }
 ]
-})
+});
 
 CoordinatorSchema
-	.virtual('url')
+	.virtual("url")
 	.get(function () {
-  return '/api/coordinator/' + this._id
-})
+  return "/api/coordinator/" + this._id
+});
 
-module.exports = mongoose.model('Coordinator', CoordinatorSchema)
+module.exports = mongoose.model("Coordinator", CoordinatorSchema);

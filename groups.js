@@ -1,4 +1,4 @@
-var mongoose = require('mongoose')
+var mongoose = require("mongoose")
 var Schema = mongoose.Schema
 
 var GroupSchema = new Schema({
@@ -12,10 +12,10 @@ var GroupSchema = new Schema({
   is_cg_admin: Boolean
 })
 GroupSchema
-	.virtual('url')
+	.virtual("url")
 	.get(function () {
-  return '/api/group/' + this._id
+  return "/api/group/" + this._id
 })
 
 // Compile model from schema
-module.exports = mongoose.model('Group', GroupSchema)
+module.exports = mongoose.model("Group", GroupSchema)

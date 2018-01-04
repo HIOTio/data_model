@@ -1,4 +1,4 @@
-var mongoose = require('mongoose')
+var mongoose = require("mongoose")
 var Schema = mongoose.Schema
 
 var Sensor_TypesSchema = new Schema({
@@ -9,9 +9,9 @@ var Sensor_TypesSchema = new Schema({
   defaultPushInterval: Number
 })
 Sensor_TypesSchema
-	.virtual('url')
+	.virtual("url")
 	.get(function () {
-  return '/api/sensor_types/' + this._id
+  return "/api/sensor_types/" + this._id
 })
 
-module.exports = mongoose.model('Sensor_Types', Sensor_TypesSchema)
+module.exports = mongoose.model("Sensor_Types", Sensor_TypesSchema)

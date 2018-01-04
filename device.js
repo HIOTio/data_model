@@ -1,4 +1,4 @@
-var mongoose = require('mongoose')
+var mongoose = require("mongoose")
 var Schema = mongoose.Schema
 
 var DeviceSchema = new Schema({
@@ -10,44 +10,44 @@ var DeviceSchema = new Schema({
     devicePath:String,
     deployment: {
       type: Schema.Types.ObjectId,
-      ref: 'Deployment'
+      ref: "Deployment"
     },
     description: String,
     name: String,
     compatibility:{
       type:String,
-      enum:['HIOT_Node','HIOT_Other','MQTT_Only'],
-      default:'MQTT_Only'
+      enum:["HIOT_Node","HIOT_Other","MQTT_Only"],
+      default:"MQTT_Only"
     },
     active: Boolean,
     added: Date,
     make: {
       type: Schema.Types.ObjectId,
-      ref: 'DeviceMake'
+      ref: "DeviceMake"
     },
     model: {
       type: Schema.Types.ObjectId,
-      ref: 'DeviceModel'
+      ref: "DeviceModel"
     },
     location: {
       type: Schema.Types.ObjectId,
-      ref: 'Location'
+      ref: "Location"
     },
     brokers:[{
       type: Schema.Types.ObjectId,
-      ref: 'Broker'
+      ref: "Broker"
     }],
     aggregators:[{
       type: Schema.Types.ObjectId,
-      ref: 'Aggregator'
+      ref: "Aggregator"
     }],
     sensors:[{
       type:Schema.Types.ObjectId,
-      ref:'Sensor'
+      ref:"Sensor"
     }],
     controllers:[{
       type:Schema.Types.ObjectId,
-      ref:'Controller'
+      ref:"Controller"
     }],
     coordinator:{
       "m2mMqttServer" : String,
@@ -62,10 +62,10 @@ var DeviceSchema = new Schema({
     moscaPort:Number
   })
 DeviceSchema
-	.virtual('url')
+	.virtual("url")
 	.get(function () {
-  return '/api/device/' + this._id
+  return "/api/device/" + this._id
 })
 
 // Compile model from schema
-module.exports = mongoose.model('Device', DeviceSchema)
+module.exports = mongoose.model("Device", DeviceSchema)

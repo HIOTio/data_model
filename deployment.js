@@ -1,4 +1,4 @@
-var mongoose = require('mongoose')
+var mongoose = require("mongoose")
 var Schema = mongoose.Schema
 
 var DeploymentSchema = new Schema({
@@ -9,7 +9,7 @@ var DeploymentSchema = new Schema({
   },
   owner: {
     type: Schema.Types.ObjectId,
-    ref: 'Profile',
+    ref: "Profile",
     required: true
   },
   added: {
@@ -22,15 +22,15 @@ var DeploymentSchema = new Schema({
   },
   deploymentType: {
     type: Schema.Types.ObjectId,
-    ref: 'DeploymentType'
+    ref: "DeploymentType"
   },
   dtValues: String
 })
 
 DeploymentSchema
-	.virtual('url')
+	.virtual("url")
 	.get(function () {
-  return '/api/deployment/' + this._id
+  return "/api/deployment/" + this._id
 })
 
-module.exports = mongoose.model('Deployment', DeploymentSchema)
+module.exports = mongoose.model("Deployment", DeploymentSchema)

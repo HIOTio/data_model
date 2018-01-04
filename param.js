@@ -1,4 +1,4 @@
-var mongoose = require('mongoose')
+var mongoose = require("mongoose")
 var Schema = mongoose.Schema
 
 var ParamSchema = new Schema({
@@ -12,8 +12,8 @@ var ParamSchema = new Schema({
 
 })
 ParamSchema
-	.virtual('url')
+	.virtual("url")
 	.get(function () {
-  return '/api/param/' + this._id
+  return "/api/param/" + this._id
 })
-module.exports = mongoose.model('Param', ParamSchema)
+module.exports = mongoose.model("Param", ParamSchema)

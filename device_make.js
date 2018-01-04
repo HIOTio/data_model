@@ -1,4 +1,4 @@
-var mongoose = require('mongoose')
+var mongoose = require("mongoose")
 var Schema = mongoose.Schema
 
 var DeviceMakeSchema = new Schema({
@@ -6,10 +6,10 @@ var DeviceMakeSchema = new Schema({
   added: Date
 })
 DeviceMakeSchema
-	.virtual('url')
+	.virtual("url")
 	.get(function () {
-  return '/api/device_make/' + this._id
+  return "/api/device_make/" + this._id
 })
 
 // Compile model from schema
-module.exports = mongoose.model('DeviceMake', DeviceMakeSchema)
+module.exports = mongoose.model("DeviceMake", DeviceMakeSchema)

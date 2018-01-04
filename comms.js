@@ -1,5 +1,5 @@
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 
 var CommsSchema = new Schema({
   comment:String,
@@ -7,7 +7,7 @@ var CommsSchema = new Schema({
   email: String,
   responded: Boolean,
   added: Date
-})
+});
 
 // Compile model from schema
-module.exports = mongoose.model('Comms', CommsSchema)
+module.exports = mongoose.model("Comms", CommsSchema);
