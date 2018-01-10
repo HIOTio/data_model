@@ -1,5 +1,5 @@
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 
 var DeploymentTypeSchema = new Schema({
   name: String,
@@ -7,11 +7,11 @@ var DeploymentTypeSchema = new Schema({
   useLocation: Boolean,
   locationLabel: String,
   objectString: String
-})
+});
 DeploymentTypeSchema
-	.virtual('url')
+	.virtual("url")
 	.get(function () {
-  return '/api/deployment_type/' + this._id
-})
+  return "/api/deployment_type/" + this._id
+});
 
-module.exports = mongoose.model('DeploymentType', DeploymentTypeSchema)
+module.exports = mongoose.model("DeploymentType", DeploymentTypeSchema);

@@ -1,4 +1,4 @@
-var mongoose = require('mongoose')
+var mongoose = require("mongoose")
 var Schema = mongoose.Schema
 
 var ErrorSchema = new Schema({
@@ -9,4 +9,4 @@ var ErrorSchema = new Schema({
 
 
 
-module.exports = mongoose.model('Error', ErrorSchema)
+module.exports = mongoose.model("Error", ErrorSchema)

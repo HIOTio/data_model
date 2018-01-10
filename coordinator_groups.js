@@ -1,5 +1,5 @@
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 
 var Coordinator_GroupSchema = new Schema({
   description: String,
@@ -9,19 +9,23 @@ var Coordinator_GroupSchema = new Schema({
   calculation: String,
   sensortype: {
     type: Schema.Types.ObjectId,
+<<<<<<< HEAD
     ref: 'sensorTypes'
+=======
+    ref: "Sensor_Types"
+>>>>>>> 885e310473418a400f17381bce0968de6edcb88f
   },
   sensors: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Sensor'
+      ref: "Sensor"
     }
   ]
-})
+});
 Coordinator_GroupSchema
-	.virtual('url')
+	.virtual("url")
 	.get(function () {
-  return '/api/coordinator_group/' + this._id
-})
+  return "/api/coordinator_group/" + this._id
+});
 
-module.exports = mongoose.model('Coordinator_Group', Coordinator_GroupSchema)
+module.exports = mongoose.model("Coordinator_Group", Coordinator_GroupSchema);

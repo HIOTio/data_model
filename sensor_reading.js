@@ -1,10 +1,10 @@
-var mongoose = require('mongoose')
+var mongoose = require("mongoose")
 var Schema = mongoose.Schema
 
 var Sensor_ReadingSchema = new Schema({
   sensor_id: {
     type: Schema.Types.ObjectId,
-    ref: 'Sensor'
+    ref: "Sensor"
   },
   date: {
     type: Date,
@@ -14,8 +14,8 @@ var Sensor_ReadingSchema = new Schema({
 
 })
 Sensor_ReadingSchema
-	.virtual('url')
+	.virtual("url")
 	.get(function () {
-  return '/api/sensor_reading/' + this._id
+  return "/api/sensor_reading/" + this._id
 })
-module.exports = mongoose.model('Sensor_Reading', Sensor_ReadingSchema)
+module.exports = mongoose.model("Sensor_Reading", Sensor_ReadingSchema)

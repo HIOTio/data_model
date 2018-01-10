@@ -1,4 +1,4 @@
-var mongoose = require('mongoose')
+var mongoose = require("mongoose")
 var Schema = mongoose.Schema
 
 var HealthSchema = new Schema({
@@ -10,12 +10,12 @@ var HealthSchema = new Schema({
   date: Date,
   device: {
     type: Schema.Types.ObjectId,
-    ref: 'Device'
+    ref: "Device"
   }
 })
 HealthSchema
-	.virtual('url')
+	.virtual("url")
 	.get(function () {
-  return '/api/health/' + this._id
+  return "/api/health/" + this._id
 })
-module.exports = mongoose.model('Health', HealthSchema)
+module.exports = mongoose.model("Health", HealthSchema)
