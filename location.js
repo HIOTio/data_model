@@ -7,10 +7,10 @@ var LocationSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Deployment"
   },
-  parent: {
+  parent: [{
     type: Schema.Types.ObjectId,
     ref: "Location"
-  },
+  }],
   added: Date
 })
 LocationSchema
