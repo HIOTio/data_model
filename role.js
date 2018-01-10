@@ -5,7 +5,7 @@ RoleSchema = new Schema({
   description: String,
   add_deployment: Boolean,
   name: String,
-  add_user: Boolean,
+  addUser: Boolean,
   control_devices: Boolean,
   active: Boolean,
   added: {

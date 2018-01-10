@@ -23,7 +23,7 @@ var DeploymentRoleSchema = new Schema({
 DeploymentRoleSchema
     .virtual('url')
     .get(function () {
-      return '/api/deployment_role/' + this._id
+      return '/api/deploymentRole/' + this._id
     })
 
 module.exports = mongoose.model('DeploymentRole', DeploymentRoleSchema)

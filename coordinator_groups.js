@@ -9,7 +9,7 @@ var Coordinator_GroupSchema = new Schema({
   calculation: String,
   sensortype: {
     type: Schema.Types.ObjectId,
-    ref: 'Sensor_Types'
+    ref: 'sensorTypes'
   },
   sensors: [
     {
