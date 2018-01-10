@@ -1,7 +1,7 @@
 var mongoose = require("mongoose")
 var Schema = mongoose.Schema
 
-var sensorTypesSchema = new Schema({
+var Sensor_TypesSchema = new Schema({
   description: String,
   name: String,
   active: Boolean,
