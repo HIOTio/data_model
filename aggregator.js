@@ -17,7 +17,11 @@ var AggregatorSchema = new Schema({
     ref:"Deployment"
   },
   added: Date,
-  active: Boolean
+  active: Boolean,
+  device: {
+    type: Schema.Types.ObjectId,
+    ref: "Device"
+  }
 });
 AggregatorSchema
 	.virtual("url")
