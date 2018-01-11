@@ -1,5 +1,5 @@
-var mongoose = require("mongoose")
-var Schema= mongoose.Schema
+var mongoose = require("mongoose");
+var Schema= mongoose.Schema;
 
 
 var HandlerSchema = new Schema({
@@ -18,18 +18,18 @@ var HandlerSchema = new Schema({
         type:Schema.Types.ObjectId,
         ref:"Controller_command"
     }]
-})
+});
   HandlerSchema
       .virtual("url")
       .get(function () {
     return "/api/handler/" + this._id
-  })
+  });
   HandlerSchema
   .virtual("path")
   .get(function () {
 return this._id
-})
+});
   
   // Compile model from schema
-  module.exports = mongoose.model("Handler", HandlerSchema)
+  module.exports = mongoose.model("Handler", HandlerSchema);
   

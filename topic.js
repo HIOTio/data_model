@@ -1,5 +1,5 @@
-var mongoose = require("mongoose")
-var Schema = mongoose.Schema
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 
 var TopicSchema = new Schema({
   name: String,
@@ -11,12 +11,12 @@ var TopicSchema = new Schema({
     required: Boolean,
     field_type: String
   }]
-})
+});
 TopicSchema
 	.virtual("url")
 	.get(function () {
   return "/api/topic/" + this._id
-})
+});
 
 // Compile model from schema
-module.exports = mongoose.model("Topic", TopicSchema)
+module.exports = mongoose.model("Topic", TopicSchema);

@@ -1,5 +1,5 @@
-var mongoose = require("mongoose")
-var Schema = mongoose.Schema
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 
 var DeploymentSchema = new Schema({
   description: String,
@@ -25,12 +25,12 @@ var DeploymentSchema = new Schema({
     ref: "DeploymentType"
   },
   dtValues: String
-})
+});
 
 DeploymentSchema
 	.virtual("url")
 	.get(function () {
   return "/api/deployment/" + this._id
-})
+});
 
-module.exports = mongoose.model("Deployment", DeploymentSchema)
+module.exports = mongoose.model("Deployment", DeploymentSchema);

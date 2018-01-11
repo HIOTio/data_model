@@ -1,5 +1,5 @@
-var mongoose = require("mongoose")
-var Schema = mongoose.Schema
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 
 var SubscriptionSchema = new Schema({
   topic: {
@@ -8,12 +8,12 @@ var SubscriptionSchema = new Schema({
   },
   added: Date,
   description: String
-})
+});
 SubscriptionSchema
 	.virtual("url")
 	.get(function () {
   return "/api/subscription/" + this._id
-})
+});
 
 // Compile model from schema
-module.exports = mongoose.model("Subscription", SubscriptionSchema)
+module.exports = mongoose.model("Subscription", SubscriptionSchema);

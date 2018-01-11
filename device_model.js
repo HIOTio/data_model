@@ -1,4 +1,4 @@
-var mongoose = require("mongoose")
+var mongoose = require("mongoose");
 var Schema = mongoose.Schema
 
 var Device_ModelSchema = new Schema({
@@ -8,10 +8,10 @@ var Device_ModelSchema = new Schema({
     ref: "Device_Make"
   },
   added: Date
-})
+});
 Device_ModelSchema
 	.virtual("url")
 	.get(function () {
   return "/api/device_model/" + this._id
-})
-module.exports = mongoose.model("DeviceModel", Device_ModelSchema)
+});
+module.exports = mongoose.model("DeviceModel", Device_ModelSchema);

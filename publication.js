@@ -1,5 +1,5 @@
-var mongoose = require("mongoose")
-var Schema = mongoose.Schema
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 
 var PublicationSchema = new Schema({
   topic: {
@@ -8,12 +8,12 @@ var PublicationSchema = new Schema({
   },
   added: Date,
   description: String
-})
+});
 PublicationSchema
 	.virtual("url")
 	.get(function () {
   return "/api/publication/" + this._id
-})
+});
 
 // Compile model from schema
-module.exports = mongoose.model("Publication", PublicationSchema)
+module.exports = mongoose.model("Publication", PublicationSchema);
