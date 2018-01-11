@@ -11,7 +11,7 @@ var DeploymentTypeSchema = new Schema({
 DeploymentTypeSchema
 	.virtual("url")
 	.get(function () {
-  return "/api/deployment_type/" + this._id
+  return "/api/deployment_type/" + this._id;
 });
 
 module.exports = mongoose.model("DeploymentType", DeploymentTypeSchema);

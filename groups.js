@@ -14,7 +14,7 @@ var GroupSchema = new Schema({
 GroupSchema
 	.virtual("url")
 	.get(function () {
-  return "/api/group/" + this._id
+  return "/api/group/" + this._id;
 });
 
 // Compile model from schema

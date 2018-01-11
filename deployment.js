@@ -30,7 +30,7 @@ var DeploymentSchema = new Schema({
 DeploymentSchema
 	.virtual("url")
 	.get(function () {
-  return "/api/deployment/" + this._id
+  return "/api/deployment/" + this._id;
 });
 
 module.exports = mongoose.model("Deployment", DeploymentSchema);

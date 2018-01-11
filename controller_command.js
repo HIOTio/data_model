@@ -13,6 +13,6 @@ var Controller_CommandSchema = new Schema({
 Controller_CommandSchema
 	.virtual("url")
 	.get(function () {
-  return "/api/controller_command/" + this._id
+  return "/api/controller_command/" + this._id;
 });
 module.exports = mongoose.model("Controller_Command", Controller_CommandSchema);

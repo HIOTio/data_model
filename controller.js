@@ -19,7 +19,7 @@ var ControllerSchema = new Schema({
 ControllerSchema
 	.virtual("url")
 	.get(function () {
-  return "/api/controller/" + this._id
+  return "/api/controller/" + this._id;
 });
 
 // Compile model from schema

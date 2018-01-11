@@ -15,7 +15,7 @@ var TopicSchema = new Schema({
 TopicSchema
 	.virtual("url")
 	.get(function () {
-  return "/api/topic/" + this._id
+  return "/api/topic/" + this._id;
 });
 
 // Compile model from schema

@@ -1,5 +1,5 @@
-var mongoose = require("mongoose")
-var Schema = mongoose.Schema
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 
 var ThingSchema = new Schema({
   deviceId: {
@@ -20,13 +20,13 @@ var ThingSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Device"
   }
-})
+});
 
 ThingSchema
 	.virtual("url")
 	.get(function () {
-  return "/api/thing/" + this._id
-})
+  return "/api/thing/" + this._id;
+});
 
 // Compile model from schema
-module.exports = mongoose.model("Thing", ThingSchema)
+module.exports = mongoose.model("Thing", ThingSchema);

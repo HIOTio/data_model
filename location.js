@@ -16,7 +16,7 @@ var LocationSchema = new Schema({
 LocationSchema
 	.virtual("url")
 	.get(function () {
-  return "/api/location/" + this._id
+  return "/api/location/" + this._id;
 });
 
 // Compile model from schema

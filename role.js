@@ -15,6 +15,6 @@ var RoleSchema = new Schema({
 RoleSchema
     .virtual("url")
     .get(function () {
-      return "/api/role/" + this._id
+      return "/api/role/" + this._id;
     });
 module.exports = mongoose.model("Role", RoleSchema);

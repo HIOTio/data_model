@@ -22,12 +22,12 @@ var HandlerSchema = new Schema({
   HandlerSchema
       .virtual("url")
       .get(function () {
-    return "/api/handler/" + this._id
+    return "/api/handler/" + this._id;
   });
   HandlerSchema
   .virtual("path")
   .get(function () {
-return this._id
+return this._id;
 });
   
   // Compile model from schema

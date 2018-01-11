@@ -9,7 +9,7 @@ var Device_ConfigurationSchema = new Schema({
 Device_ConfigurationSchema
 	.virtual("url")
 	.get(function () {
-  return "/api/device_configuration/" + this._id
+  return "/api/device_configuration/" + this._id;
 });
 
 // Compile model from schema

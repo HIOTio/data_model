@@ -12,7 +12,7 @@ var PublicationSchema = new Schema({
 PublicationSchema
 	.virtual("url")
 	.get(function () {
-  return "/api/publication/" + this._id
+  return "/api/publication/" + this._id;
 });
 
 // Compile model from schema

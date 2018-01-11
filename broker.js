@@ -14,7 +14,6 @@ var BrokerSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref:"handler"
   },
-  active:true,
   deployment: {
     type: Schema.Types.ObjectId,
     ref:"deployment"
@@ -26,7 +25,7 @@ var BrokerSchema = new Schema({
 BrokerSchema
 	.virtual("url")
 	.get(function () {
-  return "/api/broker/" + this._id
+  return "/api/broker/" + this._id;
 });
 
 module.exports = mongoose.model("Broker", BrokerSchema);

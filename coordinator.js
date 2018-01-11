@@ -30,7 +30,7 @@ var CoordinatorSchema = new Schema({
 CoordinatorSchema
 	.virtual("url")
 	.get(function () {
-  return "/api/coordinator/" + this._id
+  return "/api/coordinator/" + this._id;
 });
 
 module.exports = mongoose.model("Coordinator", CoordinatorSchema);

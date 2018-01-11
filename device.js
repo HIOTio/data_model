@@ -1,5 +1,5 @@
-var mongoose = require("mongoose")
-var Schema = mongoose.Schema
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 
 var DeviceSchema = new Schema({
     deviceId: {
@@ -60,12 +60,12 @@ var DeviceSchema = new Schema({
     }],
     moscaEnabled:Boolean,
     moscaPort:Number
-  })
+  });
 DeviceSchema
 	.virtual("url")
 	.get(function () {
-  return "/api/device/" + this._id
-})
+  return "/api/device/" + this._id;
+});
 
 // Compile model from schema
-module.exports = mongoose.model("Device", DeviceSchema)
+module.exports = mongoose.model("Device", DeviceSchema);

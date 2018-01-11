@@ -1,5 +1,5 @@
-var mongoose = require("mongoose")
-var Schema = mongoose.Schema
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 
 var SensorSchema = new Schema({
   channel: String,
@@ -12,7 +12,6 @@ var SensorSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Handler"
   },
-  config:Object,
   location: {
     type: Schema.Types.ObjectId,
     ref: "Location"
@@ -24,10 +23,10 @@ var SensorSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Sensor_Types"
   }
-})
+});
 SensorSchema
 	.virtual("url")
 	.get(function () {
-  return "/api/sensor/" + this._id
-})
-module.exports = mongoose.model("Sensor", SensorSchema)
+  return "/api/sensor/" + this._id;
+});
+module.exports = mongoose.model("Sensor", SensorSchema);

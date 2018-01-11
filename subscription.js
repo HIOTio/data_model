@@ -12,7 +12,7 @@ var SubscriptionSchema = new Schema({
 SubscriptionSchema
 	.virtual("url")
 	.get(function () {
-  return "/api/subscription/" + this._id
+  return "/api/subscription/" + this._id;
 });
 
 // Compile model from schema
