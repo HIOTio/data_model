@@ -8,6 +8,10 @@ var CommanderSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "deployment"
   },
+  controllers:[{
+    type: Schema.Types.ObjectId,
+    ref: "controller"
+  }],
   paths:[{
       type: Schema.Types.ObjectId,
       ref: "path"

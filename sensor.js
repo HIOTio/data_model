@@ -30,3 +30,4 @@ SensorSchema
   return "/api/sensor/" + this._id;
 });
 module.exports = mongoose.model("Sensor", SensorSchema);
+
