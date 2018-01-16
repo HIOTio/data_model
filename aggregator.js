@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 var AggregatorSchema = new Schema({
   name: String,
-  agg_id: String,
+  aggId: String,
   channel: String,
   topics: [String],
   description:String,

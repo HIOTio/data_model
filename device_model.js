@@ -1,17 +1,17 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-var Device_ModelSchema = new Schema({
+var DeviceModelSchema = new Schema({
   description: String,
   make: {
     type: Schema.Types.ObjectId,
-    ref: "Device_Make"
+    ref: "DeviceMake"
   },
   added: Date
 });
-Device_ModelSchema
+DeviceModelSchema
 	.virtual("url")
 	.get(function () {
   return "/api/device_model/" + this._id;
 });
-module.exports = mongoose.model("DeviceModel", Device_ModelSchema);
+module.exports = mongoose.model("DeviceModel", DeviceModelSchema);

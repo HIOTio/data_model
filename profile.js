@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 var bcrypt = require("bcrypt-nodejs");
-const SALT_WORK_FACTOR = 10;
+const SALTWORKFACTOR = 10;
 
 var ProfileSchema = new Schema({
   username: {
@@ -61,7 +61,7 @@ ProfileSchema.pre("save", function (next) {
   } 
 
 	// generate a salt
-  bcrypt.genSalt(SALT_WORK_FACTOR, function (err, salt) {
+  bcrypt.genSalt(SALTWORKFACTOR, function (err, salt) {
     if (err) {
       return next(err);
     }

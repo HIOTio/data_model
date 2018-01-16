@@ -16,7 +16,7 @@ var HandlerSchema = new Schema({
     },
     commands: [{
         type:Schema.Types.ObjectId,
-        ref:"Controller_command"
+        ref:"ControllerCommand"
     }]
 });
   HandlerSchema

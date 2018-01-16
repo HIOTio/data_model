@@ -21,7 +21,7 @@ var SensorSchema = new Schema({
   poll: Number,
   sensortype: {
     type: Schema.Types.ObjectId,
-    ref: "Sensor_Types"
+    ref: "SensorTypes"
   }
 });
 SensorSchema

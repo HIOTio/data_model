@@ -5,11 +5,11 @@ var GroupSchema = new Schema({
   description: String,
   added: Date,
   active: Boolean,
-  is_admin: Boolean,
-  is_config_admin: Boolean,
-  is_billing: Boolean,
-  is_reader: Boolean,
-  is_cg_admin: Boolean
+  isAdmin: Boolean,
+  isConfigAdmin: Boolean,
+  isBilling: Boolean,
+  isReader: Boolean,
+  isCgAdmin: Boolean
 });
 GroupSchema
 	.virtual("url")

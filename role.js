@@ -2,10 +2,10 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 var RoleSchema = new Schema({
   description: String,
-  add_deployment: Boolean,
+  addDeployment: Boolean,
   name: String,
   addUser: Boolean,
-  control_devices: Boolean,
+  controlDevices: Boolean,
   active: Boolean,
   added: {
     type: Date,

@@ -6,8 +6,8 @@ var BrokerSchema = new Schema({
   name: String,
   myPaths: [
       {
-          in:String,
-          out:String
+          type: Schema.Types.ObjectId,
+          ref: "Path"
       }
      ],
   handler: {

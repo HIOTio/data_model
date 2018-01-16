@@ -1,8 +1,8 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-var Sensor_ReadingSchema = new Schema({
-  sensor_id: {
+var SensorReadingSchema = new Schema({
+  sensorId: {
     type: Schema.Types.ObjectId,
     ref: "Sensor"
   },
@@ -13,9 +13,9 @@ var Sensor_ReadingSchema = new Schema({
   reading: Number
 
 });
-Sensor_ReadingSchema
+SensorReadingSchema
 	.virtual("url")
 	.get(function () {
   return "/api/sensor_reading/" + this._id;
 });
-module.exports = mongoose.model("Sensor_Reading", Sensor_ReadingSchema);
+module.exports = mongoose.model("SensorReading", SensorReadingSchema);

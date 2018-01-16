@@ -33,10 +33,10 @@ var DeviceSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: "Location"
     },
-    brokers:[{
+    brokers:{
       type: Schema.Types.ObjectId,
       ref: "Broker"
-    }],
+    },
     aggregators:[{
       type: Schema.Types.ObjectId,
       ref: "Aggregator"
@@ -59,7 +59,11 @@ var DeviceSchema = new Schema({
       priority:Number
     }],
     moscaEnabled:Boolean,
-    moscaPort:Number
+    moscaPort:Number,
+    path:{
+      type: Schema.Types.ObjectId,
+      ref: "Path"
+    }
   });
 DeviceSchema
 	.virtual("url")

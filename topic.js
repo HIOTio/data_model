@@ -6,10 +6,10 @@ var TopicSchema = new Schema({
   added: Date,
   description: String,
   fields: [{
-    field_name: String,
+    fieldName: String,
     description: String,
     required: Boolean,
-    field_type: String
+    fieldType: String
   }]
 });
 TopicSchema
