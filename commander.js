@@ -16,7 +16,7 @@ var CommanderSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: "path"
   }],
-  active: Boolean
+  active: Boolean,
   added: Date
 });
 CommanderSchema

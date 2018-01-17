@@ -7,6 +7,10 @@ var DeploymentSchema = new Schema({
     type: String,
     required: true
   },
+  organisation:{
+    type: Schema.Types.ObjectId,
+    ref: "organisation"
+  },
   owner: {
     type: Schema.Types.ObjectId,
     ref: "Profile",
