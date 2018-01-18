@@ -9,6 +9,10 @@ var ControllerSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "deployment"
   },
+  commands:{
+    type: Schema.Types.ObjectId,
+    ref: "controllercommand"
+  },
   channel: String,
   handler: {
     type: Schema.Types.ObjectId,
