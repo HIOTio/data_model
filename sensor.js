@@ -8,6 +8,14 @@ var SensorSchema = new Schema({
   config: String, //Need to JSON parse this
   sensorId: String,
   description: String,
+  deployment: {
+    type: Schema.Types.ObjectId,
+    ref: "deployment"
+  },
+  device: {
+    type: Schema.Types.ObjectId,
+    ref: "device"
+  },
   handler: {
     type: Schema.Types.ObjectId,
     ref: "Handler"

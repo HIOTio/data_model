@@ -9,7 +9,7 @@ var DeploymentSchema = new Schema({
   },
   organisation:{
     type: Schema.Types.ObjectId,
-    ref: "organisation"
+    ref: "Organisation"
   },
   owner: {
     type: Schema.Types.ObjectId,
